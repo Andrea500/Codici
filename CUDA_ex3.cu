@@ -29,7 +29,7 @@ void matrixMulCPU(int *a, int *b, int *c) {
 
 
 int main() {
-  int *a, *b, *c_cpu *c_gpu;
+  int *a, *b, *c_cpu, *c_gpu;
   int size = N * N * sizeof(int);
 
 // Allocate memory
