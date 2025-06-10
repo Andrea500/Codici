@@ -5,6 +5,17 @@
 
 #define N 1024
 
+// Macro to check CUDA errors
+#define cudaCheckError() {                                        
+    cudaError_t e=cudaGetLastError();                             
+    if(e!=cudaSuccess) {                                          
+        printf("CUDA Error %s:%d: %s\n",__FILE__,__LINE__,        
+               cudaGetErrorString(e));                            
+        exit(EXIT_FAILURE);                                       
+    }                                                              
+}
+
+
 __global__ void matrixMulGPU(int *a, int *b, int *c) {
 int val = 0;
 int row = threadIdx.x + blockIdx.x * blockDim.x;
