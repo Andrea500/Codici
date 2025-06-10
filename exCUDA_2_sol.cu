@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <cuda_runtime.h>
 
 inline cudaError_t checkCuda(cudaError_t result) {
   if (result != cudaSuccess) {
