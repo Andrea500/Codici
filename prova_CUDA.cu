@@ -14,5 +14,5 @@ int main()
   loop<<<1, N>>>(N);
 
   cudaDeviceSynchronize();
-  return 0
+  return 0;
 }
