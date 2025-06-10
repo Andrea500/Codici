@@ -4,7 +4,7 @@
 #include <cuda_runtime.h>
 
 #define N 1024
-
+//a
 // Macro to check CUDA errors
 #define cudaCheckError() {                                        
     cudaError_t e=cudaGetLastError();                             
