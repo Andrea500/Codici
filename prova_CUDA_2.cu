@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <cuda_runtime.h>
 
 void initWith(float num, float *a, int N) {
   for (int i = 0; i < N; ++i)
     a[i] = num;
 }
 
-void addVectors(float *result, float *a, float *b, int N) {
-  for (int i = 0; i < N; ++i)
+__global__ void addVectors(float *result, float *a, float *b, int N) {
+{
+    int i = threadIdx.x +  blockIdx.x * blockDim.x;
+  if (i<N)
     result[i] = a[i] + b[i];
 }
-
+  
 void checkElementsAre(float target, float *array, int N) {
   for (int i = 0; i < N; i++) {
     if (array[i] != target) {
