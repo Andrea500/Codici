@@ -107,8 +107,7 @@ float milliseconds = 0;
     printf("CPU Matrix Multiplication Time: %f seconds\n", cpuTime);
     printf("GPU Matrix Multiplication Time: %f seconds\n", gpuTime);
 
-    // Calculate and print speedup
-    calculateSpeedup(cpuTime, gpuTime);
+    
 
     cudaEventDestroy(start);
     cudaEventDestroy(stop);
